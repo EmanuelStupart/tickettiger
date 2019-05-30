@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+const int ROWS = 15, COLS = 30;
+void displaySeats(char[15][30]);
+int main() {
+	char seats[ROWS][COLS];
+	for (int seatRow = 0; seatRow < ROWS; seatRow++) {
+		for (int seatCol = 0; seatCol < COLS; seatCol++) {
+			seats[seatRow][seatCol] = '#';
+		}
+	}
+	ifstream myFile;
+	myFile.open("SeatAvailability.txt");
+	for (int seatRow = 0; seatRow < ROWS; seatRow++) {
+		for (int seatCol = 0; seatCol < COLS; seatCol++) {
+			myFile>>seats[seatRow][seatCol];
+		}
+
+	}
+	displaySeats(seats);
+}
+void displaySeats(char seatArray[15][30]) {
+	for (int seatRow = 0; seatRow < ROWS; seatRow++) {
+		for (int seatCol = 0; seatCol < COLS; seatCol++) {
+			cout << seatArray[seatRow][seatCol] << " ";
+		}
+		cout << endl;
+	}
+}
