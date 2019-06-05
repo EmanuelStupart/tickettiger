@@ -1,5 +1,6 @@
 //prototype
 void updateFile(char[][COLS]);
+//function
 void updateFile(char seats[][COLS]) {
 	//writes the seat array to a file
 	ofstream outFile;
